@@ -1,7 +1,7 @@
 # Memory Game
 This is a simple memory game created for the Isobar's internship program of 2018.
 
-The page can be accessed through [this link](https://paulosouzav.github.io/memory-game/).
+The page can be accessed through [this link](https://paulemberg.github.io/memory-game/).
 
 ---
 ## Running the Project
