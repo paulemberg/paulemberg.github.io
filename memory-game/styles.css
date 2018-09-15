@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: #34495e;
+}
+
+.memory-game {
+  width: 720px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+
+/* Card Styling */
+.card {
+  width: calc((100% / 4) - 20px);
+  height: calc((100% / 3) - 20px);
+  
+  margin: 10px;
+  position: relative;
+  
+  box-shadow: 0 0 15px rgba(0, 0, 0, .6);
+  border-radius: 8px;
+
+  transition: transform .4s, opacity .4s;
+  transform: scale(1);
+  transform-style: preserve-3d;
+}
+
+.card:not(.card--flip):active {
+  transform: scale(0.97);
+}
+
+.card--matched {
+  cursor: not-allowed;
+}
+
+.card--matched .card__front-face {
+  opacity: .5;
+}
+
+.card--flip,
+.card__front-face {
+  transform: rotateY(180deg);
+}
+
+.card__front-face,
+.card__back-face {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  background: #ecf0f1;
+
+  transition: opacity .4s;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 720px) {
+  .card {
+    width: calc((100% / 3) - 20px);
+    height: calc((100% / 4) - 20px);
+  }
+}
